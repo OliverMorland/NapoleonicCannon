@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Cartridge : MonoBehaviour, IIgniteable
 {
@@ -12,6 +13,7 @@ public class Cartridge : MonoBehaviour, IIgniteable
     public float gameObjectSelfDestructDelay = 1f;
     Collider collider;
     bool isIgnited = false;
+    public UnityEvent OnExplosion;
 
     private void Start()
     {
@@ -31,6 +33,7 @@ public class Cartridge : MonoBehaviour, IIgniteable
         yield return new WaitForSeconds(preExplosionDelay);
         audioSource.Stop();
         audioSource.PlayOneShot(explosionSound);
+        OnExplosion.Invoke();
         cartridgeMeshRenderer.enabled = false;
         collider.enabled = false;
         yield return new WaitForSeconds(gameObjectSelfDestructDelay);

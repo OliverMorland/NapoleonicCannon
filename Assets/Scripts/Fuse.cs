@@ -34,6 +34,7 @@ public class Fuse : MonoBehaviour, IIgniteable
             yield return new WaitForEndOfFrame();
         }
         particleSystem.Stop();
+        particleSystem.transform.position = fuseStartPoint.position;
         audioSource.Stop();
         isIgnited = false;
     }
