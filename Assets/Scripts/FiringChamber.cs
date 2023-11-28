@@ -6,6 +6,7 @@ public class FiringChamber : MonoBehaviour
 {
     [SerializeField] Transform cartridgeSnapPoint;
     [SerializeField] Transform cannonOpeningPoint;
+    [SerializeField] ParticleSystem explosionEffect;
     [SerializeField] float strength = 100f;
     Rigidbody projectile;
 
@@ -37,6 +38,7 @@ public class FiringChamber : MonoBehaviour
     {
         Debug.Log("On Cartridge exploded firing projectile");
         FireProjectile();
+        explosionEffect.Play();
     }
 
     [ContextMenu("Fire Projectile")]

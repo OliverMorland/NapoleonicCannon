@@ -39,6 +39,4 @@ public class SoundSelector : MonoBehaviour
             audioSource.PlayOneShot(defaultSound);
         }
     }
-
-
 }
