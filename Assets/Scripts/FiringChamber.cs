@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class FiringChamber : MonoBehaviour
 {
     [SerializeField] Transform cartridgeSnapPoint;
     [SerializeField] Transform cannonOpeningPoint;
-    [SerializeField] ParticleSystem explosionEffect;
+    [SerializeField] VisualEffect muzzleFlashEffect;
     [SerializeField] float strength = 100f;
     Rigidbody projectile;
 
@@ -38,7 +39,7 @@ public class FiringChamber : MonoBehaviour
     {
         Debug.Log("On Cartridge exploded firing projectile");
         FireProjectile();
-        explosionEffect.Play();
+        muzzleFlashEffect.Play();
     }
 
     [ContextMenu("Fire Projectile")]
