@@ -5,23 +5,21 @@ using UnityEngine.VFX;
 
 public class ExplosionActivator : MonoBehaviour
 {
-    [SerializeField] VisualEffect explosionEffect;
-    [SerializeField] Rigidbody rigidBody;
+    [SerializeField] VisualEffect explosionEffectPrefab;
     [SerializeField] float speedThresholdForExplosion = 2f;
+    [SerializeField] float reparentingDelay = 4f;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (rigidBody.velocity.sqrMagnitude > speedThresholdForExplosion)
+        Debug.Log(gameObject.name + " Collided with " + collision.gameObject.name);
+        if (collision.relativeVelocity.sqrMagnitude > speedThresholdForExplosion)
         {
-            OrientateExplosionEffect();
-            explosionEffect.Play();
+            Debug.Log("Collision speed merits an explosion effect");
+            VisualEffect newExplosionEffect = Instantiate(explosionEffectPrefab);
+            newExplosionEffect.transform.position = collision.transform.position;
+            Vector3 explosionDir = collision.relativeVelocity.normalized * -1f;
+            newExplosionEffect.transform.LookAt(newExplosionEffect.transform.position + explosionDir);
+            newExplosionEffect.Play();
         }
-    }
-
-    void OrientateExplosionEffect()
-    {
-        Vector3 velocityDir = rigidBody.velocity.normalized;
-        Vector3 reverseDir = velocityDir * -1f;
-        explosionEffect.transform.LookAt(explosionEffect.transform.position + reverseDir);
     }
 }
