@@ -622,7 +622,7 @@ VisualEffect:
           key6: {r: 0, g: 0, b: 0, a: 0}
           key7: {r: 0, g: 0, b: 0, a: 0}
           ctime0: 0
-          ctime1: 17733
+          ctime1: 8288
           ctime2: 65535
           ctime3: 0
           ctime4: 0
@@ -631,8 +631,8 @@ VisualEffect:
           ctime7: 0
           atime0: 0
           atime1: 771
-          atime2: 10987
-          atime3: 31418
+          atime2: 3277
+          atime3: 21203
           atime4: 65535
           atime5: 0
           atime6: 0
