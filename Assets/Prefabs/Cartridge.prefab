@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1838973352875841880}
   burnSound: {fileID: 8300000, guid: b9e1a5c7e4b66db4ca4e532b71800fd7, type: 3}
-  explosionSound: {fileID: 8300000, guid: e6bf47c49fb6e5c4b8c204d17789babd, type: 3}
+  explosionSound: {fileID: 8300000, guid: de64fbba2e9930547bde0fb61acc3ebc, type: 3}
   cartridgeMeshRenderer: {fileID: 1838973352875841886}
   preExplosionDelay: 0.5
   gameObjectSelfDestructDelay: 1
@@ -328,7 +328,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
